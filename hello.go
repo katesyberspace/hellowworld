@@ -12,8 +12,7 @@ func main() {
         firmataAdaptor := firmata.NewAdaptor("/dev/ttyACM0")
         lcd := i2c.NewJHD1313M1Driver(adaptor)
 		
-		work := func(h *JHD1313M1Driver) {
-                Write("hello world")
+		work := lcd.Write("hello world")
         }
 
         robot := gobot.NewRobot("bot",
